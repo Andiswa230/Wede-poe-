@@ -1,7 +1,7 @@
 # Destiny Beauty spa
 
 ## Overview
-The Serenity Spa website showcases the services, philosophy, and contact information of a full-service spa. It provides a welcoming and informative experience for visitors, highlighting spa treatments, hours of operation, and ways to book an appointment.
+The Destiny Beauty website provides a welcoming and informative experience for visitors, highlighting spa treatments, hours of operation, and ways to book an appointment.
 
 ---
 
