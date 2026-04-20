@@ -1,27 +1,81 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Contact us</title>
-</head>
-<body>
-     <header>
-            <img src="C:\Users\Student\Desktop\Destiny Beauty spa_St10477886\images\branding.jpg" style="width: 65px;height: 50px;">
-            <nav>
-                <a href="Home.html">Home</a>
-                <a href="About.html">About us</a>
-                <a href="Gallery.html">Gallery</a>
-                <a href="Product.html">Product</a>
-                <a href="contact.html">Contact</a>
+    <head>
+        <title>Contact information</title>
+        <link rel="stylesheet"
+        href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">LOGO</div>
+                <ul class="nav-links">
+               <li><a href="Home.html" class="nav-item">Home</a></li>
+                <li><a href="About.html"class="nav-item">About us</a></li>
+                <li><a href="Gallery.html"class="nav-item">Gallery</a></li>
+                <li><a href="Product.html"class="nav-item">services</a></li>
+                <li><a href="contact.html"class="nav-item">Contact</a></li>
+                </ul>
             </nav>
         </header>
-        <main>
+        </main>
             <h1 align="center"><u>Contact us</u></h1>
+            <h1>Serenity Spa</h1>
+  <p>We'd love to hear from you. Reach out to book an appointment or ask us anything.</p>
+
+  <hr>
+
+  <h2>Contact Form</h2>
+  <form>
+    <p>
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="name">
+    </p>
+    <p>
+      <label for="email">Email Address:</label><br>
+      <input type="email" id="email" name="email">
+    </p>
+    <p>
+      <label for="phone">Phone Number:</label><br>
+      <input type="tel" id="phone" name="phone">
+    </p>
+    <p>
+      <label for="service">Service Interested In:</label><br>
+      <select id="service" name="service">
+        <option value="">-- Select a service --</option>
+        <option value="massage">Massage</option>
+        <option value="sensory">sound therapy</option>
+        <option value="body">Body Wrap</option>
+        <option value="manicure">Manicure & Pedicure</option>
+        <option value="other">Other</option>
+      </select>
+    </p>
+    <p>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" cols="40"></textarea>
+    </p>
+    <p>
+      <button type="submit">Send Message</button>
+    </p>
+  </form>
+
+  <hr>
+
+  <h2>Our Details</h2>
+  <p><strong>Address:</strong>Ruimsig, VIP, 1724</p>
+  <p><strong>Phone:</strong> <a href="tel:0630059928">0630059928</a></p>
+  <p><strong>Email:</strong> <a href="DestinyBeatyspa@gmail.com">DestinyBeatyspa@gmail.com</a></p>
+  <p><strong>Hours:</strong><br>
+    Monday – Friday: 9:00 AM – 7:00 PM<br>
+    Saturday: 9:00 AM – 5:00 PM<br>
+    Sunday: Closed
+  </p>
+            
+    <!--Add a a bubble for whatsaapp, instagram, twitter, and email-->
+    
         </main>
         <footer>
-                &copy;St10477886
+            &copy;St10477886
         </footer>
-</body>
-
-
-
+    </body>
 </html>
