@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <meta name ="description" content="beauty spa">
+        <meta name ="keywords" content="Spa">
+        <meta name ="auhtor" content=" St10477886">
+        <meta name ="viewpoint" content="width=device-width,intial-scale=1.0">
         <title>Contact information</title>
         <link rel="stylesheet"
         href="style.css">
@@ -25,53 +29,347 @@
 
   <hr>
 
-  <h2>Contact Form</h2>
-  <form>
-    <p>
-      <label for="name">Full Name:</label><br>
-      <input type="text" id="name" name="name">
-    </p>
-    <p>
-      <label for="email">Email Address:</label><br>
-      <input type="email" id="email" name="email">
-    </p>
-    <p>
-      <label for="phone">Phone Number:</label><br>
-      <input type="tel" id="phone" name="phone">
-    </p>
-    <p>
-      <label for="service">Service Interested In:</label><br>
-      <select id="service" name="service">
-        <option value="">-- Select a service --</option>
-        <option value="massage">Massage</option>
-        <option value="sensory">sound therapy</option>
-        <option value="body">Body Wrap</option>
-        <option value="manicure">Manicure & Pedicure</option>
-        <option value="other">Other</option>
-      </select>
-    </p>
-    <p>
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="5" cols="40"></textarea>
-    </p>
-    <p>
-      <button type="submit">Send Message</button>
-    </p>
-  </form>
+ <h1 align="center"><u>Contact Us here:</u></h1>
 
-  <hr>
 
-  <h2>Our Details</h2>
-  <p><strong>Address:</strong>Ruimsig, VIP, 1724</p>
-  <p><strong>Phone:</strong> <a href="tel:0630059928">0630059928</a></p>
-  <p><strong>Email:</strong> <a href="DestinyBeatyspa@gmail.com">DestinyBeatyspa@gmail.com</a></p>
-  <p><strong>Hours:</strong><br>
-    Monday – Friday: 9:00 AM – 7:00 PM<br>
-    Saturday: 9:00 AM – 5:00 PM<br>
-    Sunday: Closed
-  </p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d459239.03614693595!2d27.954352870890197!3d-25.941627837906278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95572c58295671%3A0x7d2ba7d17f826020!2sDestine%20Beauty%20Spa!5e0!3m2!1sen!2sza!4v1779994290061!5m2!1sen!2sza" width="1000" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<form id="signupForm" novalidate>
+
+  <div class ="field">
+      <label for ="fullName"> Full name <span class="req">*</span></label>
+      <input type="text" id="fullName" name="fullName" autocomplete="name" placeholder="kevin Durant">
+      <div class = "error-msg" id="fullNameError"></div>
+  </div>
+
+  <div class ="field">
+      <label for ="email">Your Email address <span class="req">*</span></label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="example@gmail.com">
+      <div class = "error-msg" id="emailError"></div>
+  </div>
+
+  <div class ="field">
+      <label for ="phone"> Contact number <span class="req">*</span></label>
+      <input type="text" id="phone" name="phone" autocomplete="tel" placeholder="0653245487">
+      <div class ="hint">10 digits, no space is required or dash</div>
+      <div class = "error-msg" id="phoneError"></div>
+  </div>
+
+  <div class ="field">
+      <label for ="age"> Age <span class="req">*</span></label>
+      <input type="text" id="age" name="age" autocomplete="age" placeholder="18">
+      <div class = "error-msg" id="ageError"></div>
+  </div>
+
+  <div class ="field">
+      <label for ="password"> password <span class="req">*</span></label>
+      <input type="password" id="password" name="password" autocomplete="new-password" placeholder="at least 8 characters long">
+      <div class = "password-strength"> <div class = "password-strength-fill" id="strengthFll"></div></div>
+      <div class="hint" id="strengthLabel"> use 8+ characters with numbers and symbols</div>
+      <div class="error-msg" id="passworderror"></div>
+  </div>
   
+  <div class ="field">
+      <label for ="confirmPassword"> confirm password <span class="req">*</span></label>
+      <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" placeholder="re-enter password">
+      <div class = "error-msg" id="confirmPasswordError"></div>
+  </div>
+
+   <div class ="field">
+      <label for ="confirmPassword"> confirm password <span class="req">*</span></label>
+      <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" placeholder="re-enter password">
+      <div class = "error-msg" id="confirmPasswordError"></div>
+  </div>
+  <button type="submit">create account</button> <button type="reset">clear</button>
+</form>
+<script>
+            (function () {
+                const form = document.getElementById('signupForm');
+                const successBanner = document.getElementById('successBanner');
+
+                const fields = {
+                    fullName: { el: document.getElementById('fullName'), errEl: document.getElementById('fullNameError') },
+                    email: { el: document.getElementById('email'), errEl: document.getElementById('emailError') },
+                    phone: { el: document.getElementById('phone'), errEl: document.getElementById('phoneError') },
+                    age: { el: document.getElementById('age'), errEl: document.getElementById('ageError') },
+                    password: { el: document.getElementById('password'), errEl: document.getElementById('passwordError') },
+                    confirmPassword: { el: document.getElementById('confirmPassword'), errEl: document.getElementById('confirmPasswordError') }
+                };
+
+        
+                function setError(field, message) {
+                    field.el.classList.remove('success');
+                    field.el.classList.add('error');
+                    field.errEl.textContent = message;
+                    field.errEl.classList.add('show');
+                }
+
+            
+                function setSuccess(field) {
+                    field.el.classList.remove('error');
+                    field.el.classList.add('success');
+                    field.errEl.textContent = '';
+                    field.errEl.classList.remove('show');
+                }
+
+            
+                function clearState(field) {
+                    field.el.classList.remove('error', 'success');
+                    field.errEl.textContent = '';
+                    field.errEl.classList.remove('show');
+                }
+
+            
+                function validateFullName(showState = true) {
+                    const value = fields.fullName.el.value.trim();
+                    if (value.length === 0) {
+                        if (showState) setError(fields.fullName, 'Full name is required.');
+                        return false;
+                    }
+                    if (value.length < 2) {
+                        if (showState) setError(fields.fullName, 'Name must be at least 2 characters.');
+                        return false;
+                    }
+                    if (!/^[A-Za-z\s'-]+$/.test(value)) {
+                        if (showState) setError(fields.fullName, 'Name can only contain letters, spaces, hyphens, and apostrophes.');
+                        return false;
+                    }
+                    if (showState) setSuccess(fields.fullName);
+                    return true;
+                }
+
+                function validateEmail(showState = true) {
+                    const value = fields.email.el.value.trim();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (value.length === 0) {
+                        if (showState) setError(fields.email, 'Email address is required.');
+                        return false;
+                    }
+                    if (!emailRegex.test(value)) {
+                        if (showState) setError(fields.email, 'Please enter a valid email address.');
+                        return false;
+                    }
+                    if (showState) setSuccess(fields.email);
+                    return true;
+                }
+
+                function validatePhone(showState = true) {
+                    const value = fields.phone.el.value.trim();
+                    if (value.length === 0) {
+                        if (showState) setError(fields.phone, 'Contact number is required.');
+                        return false;
+                    }
+                    if (!/^\d{10}$/.test(value)) {
+                        if (showState) setError(fields.phone, 'Phone number must be exactly 10 digits.');
+                        return false;
+                    }
+                    if (showState) setSuccess(fields.phone);
+                    return true;
+                }
+
+                function validateAge(showState = true) {
+                    const value = fields.age.el.value.trim();
+                    if (value.length === 0) {
+                        if (showState) setError(fields.age, 'Age is required.');
+                        return false;
+                    }
+                    const ageNum = parseInt(value, 10);
+                    if (isNaN(ageNum) || ageNum < 1 || ageNum > 120) {
+                        if (showState) setError(fields.age, 'Please enter a realistic age.');
+                        return false;
+                    }
+                    if (showState) setSuccess(fields.age);
+                    return true;
+                }
+
+                function validatePassword(showState = true) {
+                    const value = fields.password.el.value;
+                    if (value.length === 0) {
+                        if (showState) setError(fields.password, 'Password is required.');
+                        return false;
+                    }
+                    if (value.length < 8) {
+                        if (showState) setError(fields.password, 'Password must be at least 8 characters long.');
+                        return false;
+                    }
+                    if (showState) setSuccess(fields.password);
+                    return true;
+                }
+
+                function validateConfirmPassword(showState = true) {
+                    const passValue = fields.password.el.value;
+                    const confirmValue = fields.confirmPassword.el.value;
+                    if (confirmValue.length === 0) {
+                        if (showState) setError(fields.confirmPassword, 'Please confirm your password.');
+                        return false;
+                    }
+                    if (passValue !== confirmValue) {
+                        if (showState) setError(fields.confirmPassword, 'Passwords do not match.');
+                        return false;
+                    }
+                    if (showState) setSuccess(fields.confirmPassword);
+                    return true;
+                }
+
+                // Live Validation on input defocus (blur)
+                fields.fullName.el.addEventListener('blur', () => validateFullName());
+                fields.email.el.addEventListener('blur', () => validateEmail());
+                fields.phone.el.addEventListener('blur', () => validatePhone());
+                fields.age.el.addEventListener('blur', () => validateAge());
+                fields.password.el.addEventListener('blur', () => {
+                    validatePassword();
+                    if(fields.confirmPassword.el.value.length > 0) validateConfirmPassword();
+                });
+                fields.confirmPassword.el.addEventListener('blur', () => validateConfirmPassword());
+
+                // Form Submit Handling
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault(); // Stop standard HTTP post/refresh
+
+                    // Evaluate all fields explicitly
+                    const isNameValid = validateFullName();
+                    const isEmailValid = validateEmail();
+                    const isPhoneValid = validatePhone();
+                    const isAgeValid = validateAge();
+                    const isPasswordValid = validatePassword();
+                    const isConfirmValid = validateConfirmPassword();
+
+                    if (isNameValid && isEmailValid && isPhoneValid && isAgeValid && isPasswordValid && isConfirmValid) {
+                        successBanner.style.display = 'block';
+                        form.reset();
+                        // Reset field styling states after submission
+                        Object.keys(fields).forEach(key => clearState(fields[key]));
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        successBanner.style.display = 'none';
+                    }
+                });
+
+                // Clear formatting states on reset click
+                document.getElementById('resetBtn').addEventListener('click', () => {
+                    successBanner.style.display = 'none';
+                    Object.keys(fields).forEach(key => clearState(fields[key]));
+                });
+            })();
+        </script>
+        <style>
+            body {
+                background-color: #f5f7fa;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: #333;
+            }
+            #signupForm {
+                background-color: #ffffff;
+                max-width: 500px;
+                margin: 30px auto;
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                border: 1px solid #eef2f5;
+            }
+            .field {
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+            }
+            .field label {
+                font-weight: 600;
+                margin-bottom: 8px;
+                font-size: 0.9rem;
+                color: #4a5568;
+                text-transform: capitalize;
+            }
+            .req {
+                color: #e53e3e;
+                margin-left: 3px;
+            }
+            .field input {
+                padding: 12px 16px;
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                font-size: 0.95rem;
+                transition: all 0.2s ease;
+                outline: none;
+                background-color: #fafbfc;
+            }
+            .field input:focus {
+                border-color: #4f46e5;
+                background-color: #fff;
+                box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+            }
+        
+            .field input.error {
+                border-color: #e53e3e;
+                background-color: #fff5f5;
+            }
+            .field input.success {
+                border-color: #38a169;
+                background-color: #f0fff4;
+            }
+            .error-msg {
+                color: #e53e3e;
+                font-size: 0.8rem;
+                margin-top: 5px;
+                display: none;
+            }
+            .error-msg.show {
+                display: block;
+            }
+            .hint {
+                color: #718096;
+                font-size: 0.8rem;
+                margin-top: 5px;
+                line-height: 1.4;
+            }
+            .password-strength {
+                background-color: #edf2f7;
+                height: 4px;
+                border-radius: 2px;
+                margin-top: 6px;
+                overflow: hidden;
+            }
+            .password-strength-fill {
+                height: 100%;
+                width: 0%;
+                background-color: #38a169;
+                transition: width 0.3s ease;
+            }
+            button {
+                padding: 12px 24px;
+                font-size: 0.95rem;
+                font-weight: 600;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+            button[type="submit"] {
+                background-color: #4f46e5;
+                color: white;
+                margin-right: 10px;
+                box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+            }
+            button[type="submit"]:hover {
+                background-color: #4338ca;
+            }
+            button[type="reset"] {
+                background-color: #e2e8f0;
+                color: #4a5568;
+            }
+            button[type="reset"]:hover {
+                background-color: #cbd5e1;
+            }
+            #successBanner {
+                max-width: 500px;
+                margin: 20px auto;
+                padding: 15px;
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+                border-radius: 6px;
+                text-align: center;
+                display: none;
+            }
+        </style>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d459239.03614693595!2d27.954352870890197!3d-25.941627837906278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95572c58295671%3A0x7d2ba7d17f826020!2sDestine%20Beauty%20Spa!5e0!3m2!1sen!2sza!4v1779994290061!5m2!1sen!2sza" width="1000" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
     <!--Add a a bubble for whatsaapp, instagram, twitter, and email-->
     

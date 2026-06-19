@@ -162,7 +162,6 @@ body{
   }
 }
 
-/* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   .infinite-scroll-card {
     background: linear-gradient(135deg, #8a3eff, #3a7bd5);
@@ -170,7 +169,6 @@ body{
   }
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
   .infinite-scroll-container {
     max-width: 100%;
@@ -204,5 +202,116 @@ body{
       transform: translateX(calc(-200px * 3 - 350x));
     }
   }
+
+.signupForm {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.field {
+    margin-bottom: 20px; 
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.req {
+    color: #e53e3e;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+input.error {
+    border-color: #e53e3e;
+    background-color: #fff5f5;
+}
+
+input.success {
+    border-color: #38a169;
+    background-color: #f0fff4;
+}
+
+
+.error-msg {
+    color: #e53e3e;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    min-height: 18px; 
+}
+
+.hint {
+    color: #718096;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button[type="submit"] {
+    background-color: #3182ce;
+    color: #ffffff;
+}
+
+button[type="submit"]:hover {
+    background-color: #2b6cb0;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+button[type="reset"] {
+    background-color: #edf2f7;
+    color: #4a5568;
+}
+
+button[type="reset"]:hover {
+    background-color: #e2e8f0;
+}
   
 }
